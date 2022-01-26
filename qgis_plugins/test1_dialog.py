@@ -23,7 +23,11 @@
 """
 
 import os
-
+import pandas as pd
+import numpy as np
+from netCDF4 import Dataset
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
@@ -46,4 +50,21 @@ class test1Dialog(QtWidgets.QDialog, FORM_CLASS):
     
     def plotNetcdfData(self):
         if(self.PathToFileInput.text().strip()):
-            print("hello")
+            raw_path = r'{}'.format(self.PathToFileInput.text().strip())
+            data = Dataset(raw_path, "r")
+            lon_data = data.variables['lon'][:]
+            lat_data = data.variables['lat'][:]
+            time_data = data.variables['time'][:]
+            tave = data.variables['tave'][:]
+            mp = Basemap(projection='merc', llcrnrlat=-1.93805556, llcrnrlon=55.43444444, urcrnrlat=40.38888889, urcrnrlon=106.42694444, resolution='i')
+            lon, lat = np.meshgrid(lon_data, lat_data)
+            x, y = mp(lon, lat)
+
+            i = 0
+            c_scheme = mp.pcolor(x, y, np.squeeze(tave[i,:,:]), cmap = 'jet')
+            c_bar = mp.colorbar(c_scheme, location='bottom', pad='20%')
+            mp.drawcoastlines()
+            mp.drawstates()
+            mp.drawcountries()
+            plt.title("Average Temperature on day " + str(i+1) + " of 1961")
+            plt.show()
