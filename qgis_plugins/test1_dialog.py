@@ -52,11 +52,18 @@ class test1Dialog(QtWidgets.QDialog, FORM_CLASS):
         if(self.PathToFileInput.text().strip()):
             raw_path = r'{}'.format(self.PathToFileInput.text().strip())
             data = Dataset(raw_path, "r")
-            lon_data = data.variables['lon'][:]
-            lat_data = data.variables['lat'][:]
-            time_data = data.variables['time'][:]
+            lat_name = ""
+            lon_name = ""
+            for var in data.variables:
+                if data.variables[var].long_name.lower() == 'latitude':
+                    lat_name = var
+                if data.variables[var].long_name.lower() == 'longitude':
+                    lon_name = var
+            lon_data = data.variables[lon_name][:]
+            lat_data = data.variables[lat_name][:]
+            print()
             tave = data.variables['tave'][:]
-            mp = Basemap(projection='merc', llcrnrlat=-1.93805556, llcrnrlon=55.43444444, urcrnrlat=40.38888889, urcrnrlon=106.42694444, resolution='i')
+            mp = Basemap(projection='merc', llcrnrlat=self.ll_lat.value(), llcrnrlon=self.ll_lon.value(), urcrnrlat=self.ur_lat.value(), urcrnrlon=self.ur_lon.value(), resolution='i')
             lon, lat = np.meshgrid(lon_data, lat_data)
             x, y = mp(lon, lat)
 
@@ -68,3 +75,6 @@ class test1Dialog(QtWidgets.QDialog, FORM_CLASS):
             mp.drawcountries()
             plt.title("Average Temperature on day " + str(i+1) + " of 1961")
             plt.show()
+
+
+# C:\Users\Priyanshu\Downloads\NetCDF_python\netcdf_files\APHRO_MA_TAVE_025deg_V1808.1961.nc
