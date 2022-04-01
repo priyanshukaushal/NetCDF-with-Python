@@ -3,14 +3,14 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=test1
+name=netcdf_visualizer
 qgisMinimumVersion=3.0
-description=test1
+description=converts netcdf data to raster data
 version=0.1
-author=priyanshu
-email=priyanshukaushal.bt19cse@pec.edu.in
+author=Priyanshu Kaushal
+email=priyanshu.kaushal2001@gmail.com
 
-about=Provide a brief description of the plugin and its purpose.
+about=Converts netcdf to a single band geotiff with HSV color slicing.
 
 tracker=http://bugs
 repository=http://repo

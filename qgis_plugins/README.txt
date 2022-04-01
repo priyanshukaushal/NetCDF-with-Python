@@ -1,7 +1,7 @@
 Plugin Builder Results
 
-Your plugin test1 was created in:
-    E:/qgis_plugins\test1
+Your plugin netcdf_visualizer was created in:
+    E:/qgis_plugins\netcdf_visualizer
 
 Your QGIS plugin directory is located at:
     C:/Users/Priyanshu/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins
@@ -17,11 +17,11 @@ What's Next:
 
   * Test the plugin by enabling it in the QGIS plugin manager
 
-  * Customize it by editing the implementation file: ``test1.py``
+  * Customize it by editing the implementation file: ``netcdf_visualizer.py``
 
   * Create your own custom icon, replacing the default icon.png
 
-  * Modify your user interface by opening test1_dialog_base.ui in Qt Designer
+  * Modify your user interface by opening netcdf_visualizer_dialog_base.ui in Qt Designer
 
   * You can use the Makefile to compile your Ui and resource files when
     you make changes. This requires GNU make (gmake)

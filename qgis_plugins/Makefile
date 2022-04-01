@@ -1,12 +1,12 @@
 #/***************************************************************************
-# test1
+# netcdf_visualizer
 #
-# test1
+# converts netcdf data to raster data
 #							 -------------------
-#		begin				: 2022-01-20
+#		begin				: 2022-03-11
 #		git sha				: $Format:%H$
-#		copyright			: (C) 2022 by priyanshu
-#		email				: priyanshukaushal.bt19cse@pec.edu.in
+#		copyright			: (C) 2022 by Priyanshu Kaushal
+#		email				: priyanshu.kaushal2001@gmail.com
 # ***************************************************************************/
 #
 #/***************************************************************************
@@ -38,15 +38,15 @@ LOCALES =
 # translation
 SOURCES = \
 	__init__.py \
-	test1.py test1_dialog.py
+	netcdf_visualizer.py netcdf_visualizer_dialog.py
 
-PLUGINNAME = test1
+PLUGINNAME = netcdf_visualizer
 
 PY_FILES = \
 	__init__.py \
-	test1.py test1_dialog.py
+	netcdf_visualizer.py netcdf_visualizer_dialog.py
 
-UI_FILES = test1_dialog_base.ui
+UI_FILES = netcdf_visualizer_dialog_base.ui
 
 EXTRAS = metadata.txt icon.png
 

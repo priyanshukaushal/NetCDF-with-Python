@@ -8,9 +8,9 @@
 
 """
 
-__author__ = 'priyanshukaushal.bt19cse@pec.edu.in'
-__date__ = '2022-01-20'
-__copyright__ = 'Copyright 2022, priyanshu'
+__author__ = 'priyanshu.kaushal2001@gmail.com'
+__date__ = '2022-03-11'
+__copyright__ = 'Copyright 2022, Priyanshu Kaushal'
 
 import unittest
 
@@ -18,7 +18,7 @@ from qgis.PyQt.QtGui import QIcon
 
 
 
-class test1DialogTest(unittest.TestCase):
+class netcdf_visualizerDialogTest(unittest.TestCase):
     """Test rerources work."""
 
     def setUp(self):
@@ -31,12 +31,12 @@ class test1DialogTest(unittest.TestCase):
 
     def test_icon_png(self):
         """Test we can click OK."""
-        path = ':/plugins/test1/icon.png'
+        path = ':/plugins/netcdf_visualizer/icon.png'
         icon = QIcon(path)
         self.assertFalse(icon.isNull())
 
 if __name__ == "__main__":
-    suite = unittest.makeSuite(test1ResourcesTest)
+    suite = unittest.makeSuite(netcdf_visualizerResourcesTest)
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(suite)
 
