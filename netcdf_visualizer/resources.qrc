@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/netcdf_visualizer" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
